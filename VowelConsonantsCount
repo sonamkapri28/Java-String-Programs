@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+class VowelConsonantsCount
+{
+	public static void main(String args[])
+	{
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter String : ");
+		String str = sc.nextLine();//take string from user
+
+		int vowel=0,consonants=0;//counter to count
+
+		char ch[] = str.trim().replaceAll("\\s+","").toCharArray();
+		/*string gets trim first then
+		replace all the spaces with "" then
+		then string is converted into character array*/ 
+
+		for(int i=0;i<ch.length;i++)
+		{
+			if(ch[i]=='a' || ch[i]=='e' || ch[i]=='i' || ch[i]=='o' || ch[i]=='u')
+			{
+				vowel++;
+			}
+			else
+			{
+				consonants++;
+			}
+		}
+		
+		System.out.println("Vowels Count : " + vowel);
+		System.out.println("Consonants Count : " + consonants);
+	}
+}
